@@ -3,34 +3,355 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hair Sense</title>
-  <meta name="description" content="Hair Sense — relaxing hair play sessions. Book online.">
+  <title>Hair Sense — gentle hair play in Vida, Oregon</title>
+  <meta name="description" content="Relaxing, ASMR-style hair play sessions at a private country studio in Vida, Oregon. Brushing, light scalp scratching and gentle hair play. Book online.">
+  <link rel="canonical" href="https://hair-sense.com/">
+  <meta property="og:title" content="Hair Sense — gentle hair play in Vida, Oregon">
+  <meta property="og:description" content="Brushing, light scalp scratching and gentle hair play at a private country studio. Book online.">
+  <meta property="og:url" content="https://hair-sense.com/">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1f3a33">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f3a33'/%3E%3Cpath d='M16 46c6-14 2-26 10-30M26 48c4-12 2-22 10-32M36 48c3-10 4-20 12-30' fill='none' stroke='%23e3ebe4' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
   <style>
-    :root { --bg: #faf7f4; --fg: #2b2522; --muted: #7a6f69; --accent: #8a5a44; --accent-fg: #fff; }
+    :root {
+      --mist: #e8eee9;
+      --mist-deep: #d6e0d8;
+      --fir: #1f3a33;
+      --fir-soft: #3d564e;
+      --river: #36626c;
+      --moss: #7f8f52;
+      --paper: #f6f8f5;
+      --bg: var(--mist);
+      --fg: var(--fir);
+      --muted: var(--fir-soft);
+      --accent: var(--river);
+      --accent-fg: #ffffff;
+      --line: rgba(31, 58, 51, .18);
+      --strand: rgba(54, 98, 108, .55);
+      --strand-2: rgba(127, 143, 82, .5);
+      --serif: "Young Serif", Georgia, serif;
+      --sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --wrap: 68rem;
+      --gutter: clamp(1rem, 4vw, 2.5rem);
+    }
     @media (prefers-color-scheme: dark) {
-      :root { --bg: #1c1917; --fg: #f5f0eb; --muted: #a8a29e; --accent: #d6a589; --accent-fg: #1c1917; }
+      :root {
+        --bg: #14231f;
+        --paper: #1b2d28;
+        --mist-deep: #22382f;
+        --fg: #e3ebe4;
+        --muted: #a9bbb1;
+        --accent: #8fc0c6;
+        --accent-fg: #10201c;
+        --line: rgba(227, 235, 228, .16);
+        --strand: rgba(143, 192, 198, .45);
+        --strand-2: rgba(178, 192, 130, .4);
+      }
     }
-    * { box-sizing: border-box; margin: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body {
-      min-height: 100vh; display: grid; place-items: center;
-      background: var(--bg); color: var(--fg);
-      font-family: Georgia, "Times New Roman", serif; text-align: center; padding: 16px;
+      margin: 0; background: var(--bg); color: var(--fg);
+      font: 400 1.0625rem/1.6 var(--sans);
+      -webkit-font-smoothing: antialiased;
     }
-    h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: normal; letter-spacing: .02em; }
-    p { margin-top: .75rem; color: var(--muted); font-family: system-ui, sans-serif; }
-    .book {
-      display: inline-block; margin-top: 2rem; padding: .9rem 1.8rem; border-radius: 999px;
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.15; margin: 0; letter-spacing: -.005em; }
+    h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); max-width: 22ch; }
+    p { margin: 0; }
+    .lede { color: var(--muted); max-width: 58ch; }
+
+    .btn {
+      display: inline-block; padding: .85rem 1.6rem; border-radius: 999px;
       background: var(--accent); color: var(--accent-fg); text-decoration: none;
-      font-family: system-ui, sans-serif; font-size: 1rem; letter-spacing: .02em;
+      font: 600 1rem/1 var(--sans); letter-spacing: .01em;
+      transition: filter .15s ease;
     }
-    .book:hover, .book:focus-visible { filter: brightness(1.08); }
+    .btn:hover { filter: brightness(1.1); }
+    .btn-quiet {
+      background: transparent; color: var(--fg); box-shadow: inset 0 0 0 1.5px var(--line);
+    }
+
+    /* Header */
+    header.site { position: relative; z-index: 2; }
+    header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1.25rem; padding-bottom: 1.25rem; }
+    .brand { font-family: var(--serif); font-size: 1.35rem; text-decoration: none; }
+    nav.top { display: flex; gap: 1.5rem; align-items: center; font-size: .95rem; }
+    nav.top a:not(.btn) { text-decoration: none; color: var(--muted); }
+    nav.top a:not(.btn):hover { color: var(--fg); }
+    nav.top .btn { padding: .6rem 1.15rem; font-size: .9rem; }
+    @media (max-width: 720px) { nav.top a:not(.btn) { display: none; } }
+
+    /* Hero */
+    .hero { position: relative; overflow: hidden; padding: clamp(3rem, 9vw, 7rem) 0 clamp(4rem, 10vw, 8rem); }
+    .hero .wrap { position: relative; z-index: 1; }
+    .hero h1 { font-size: clamp(2.6rem, 7.5vw, 5.25rem); max-width: 12ch; }
+    .hero .lede { margin-top: 1.5rem; font-size: 1.15rem; max-width: 44ch; }
+    .hero .actions { margin-top: 2.25rem; display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+    .hero .where { margin-top: 2.5rem; font-size: .95rem; color: var(--muted); }
+    .strands { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 70%, transparent 100%);
+              mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 70%, transparent 100%); }
+    .strands path { fill: none; stroke-width: 1.6; stroke-linecap: round; }
+    .strands .a { stroke: var(--strand); }
+    .strands .b { stroke: var(--strand-2); }
+    @media (max-width: 720px) { .strands { opacity: .45; } }
+    @media (prefers-reduced-motion: no-preference) {
+      .strands g { animation: sway 9s ease-in-out infinite alternate; transform-origin: 50% 0; }
+      .strands g:nth-child(2) { animation-duration: 11s; animation-delay: -3s; }
+      .strands g:nth-child(3) { animation-duration: 13s; animation-delay: -6s; }
+      @keyframes sway { from { transform: translateX(-10px) skewX(-1.5deg); } to { transform: translateX(10px) skewX(1.5deg); } }
+    }
+
+    section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+    section + section { border-top: 1px solid var(--line); }
+
+    /* About */
+    .about .grid { display: grid; gap: 2rem 4rem; grid-template-columns: 1fr; }
+    @media (min-width: 860px) { .about .grid { grid-template-columns: 1fr 1.2fr; align-items: start; } }
+    .about .body p + p { margin-top: 1rem; }
+    .about .body { max-width: 60ch; }
+
+    /* Sessions */
+    .sessions { background: var(--paper); }
+    .sessions .lede { margin-top: 1rem; }
+    .menu { list-style: none; margin: 2.75rem 0 0; padding: 0; }
+    .menu li { display: grid; gap: .5rem 2rem; padding: 1.75rem 0; border-top: 1px solid var(--line); grid-template-columns: 1fr auto; grid-template-areas: "name price" "bar bar" "desc desc" "book book"; }
+    .menu li:last-child { border-bottom: 1px solid var(--line); }
+    @media (min-width: 860px) {
+      .menu li { grid-template-columns: 14rem 1fr 6rem auto; grid-template-areas: "name desc price book" "bar desc price book"; align-items: start; }
+    }
+    .menu h3 { grid-area: name; font-size: 1.5rem; }
+    .menu .desc { grid-area: desc; color: var(--muted); max-width: 52ch; }
+    .menu .price { grid-area: price; font-family: var(--serif); font-size: 1.5rem; text-align: right; }
+    .menu .book { grid-area: book; align-self: center; }
+    .menu .book a { font-weight: 600; color: var(--accent); text-underline-offset: .25em; white-space: nowrap; }
+    .dur { grid-area: bar; display: flex; align-items: center; gap: .65rem; font-size: .9rem; color: var(--muted); }
+    .dur .track { position: relative; width: 9rem; height: 6px; border-radius: 3px; background: var(--mist-deep); overflow: hidden; }
+    .dur .fill { position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--moss); }
+    .note { margin-top: 1.5rem; font-size: .95rem; color: var(--muted); max-width: 60ch; }
+
+    /* Steps */
+    .steps ol { list-style: none; counter-reset: s; margin: 2.75rem 0 0; padding: 0; display: grid; gap: 2rem; grid-template-columns: 1fr; }
+    @media (min-width: 860px) { .steps ol { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
+    .steps li { counter-increment: s; }
+    .steps li::before { content: counter(s); display: block; font-family: var(--serif); font-size: 2.75rem; line-height: 1; color: var(--moss); margin-bottom: .75rem; }
+    .steps h3 { font-size: 1.3rem; margin-bottom: .5rem; }
+    .steps p { color: var(--muted); max-width: 36ch; }
+
+    /* Visit */
+    .visit .grid { display: grid; gap: 2.5rem 4rem; grid-template-columns: 1fr; }
+    @media (min-width: 860px) { .visit .grid { grid-template-columns: 1.2fr 1fr; } }
+    .visit .lede { margin-top: 1rem; }
+    dl.facts { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: .9rem 1.5rem; }
+    dl.facts dt { font-weight: 600; }
+    dl.facts dd { margin: 0; color: var(--muted); }
+
+    /* FAQ */
+    .faq .list { margin-top: 2.25rem; max-width: 46rem; }
+    details { border-top: 1px solid var(--line); }
+    details:last-child { border-bottom: 1px solid var(--line); }
+    summary { cursor: pointer; list-style: none; padding: 1.15rem 2.5rem 1.15rem 0; position: relative; font-family: var(--serif); font-size: 1.2rem; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: .25rem; top: 50%; transform: translateY(-50%); font-family: var(--sans); font-size: 1.5rem; color: var(--accent); transition: transform .2s ease; }
+    details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+    details p { padding: 0 0 1.25rem; color: var(--muted); max-width: 60ch; }
+
+    /* Closing */
+    .closing { background: var(--fir); color: #e3ebe4; text-align: left; }
+    @media (prefers-color-scheme: dark) { .closing { background: var(--paper); } }
+    .closing h2 { color: #f2f6f2; }
+    .closing p { margin-top: 1rem; color: #b9c9c0; max-width: 52ch; }
+    .closing .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; }
+    .closing .btn { background: #e3ebe4; color: var(--fir); }
+    .closing a.plain { color: #e3ebe4; text-underline-offset: .25em; }
+
+    footer { padding: 2rem 0 2.5rem; font-size: .9rem; color: var(--muted); }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: .5rem 2rem; justify-content: space-between; }
+    footer a { text-underline-offset: .2em; }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Hair Sense</h1>
-    <p>Full website coming soon.</p>
-    <a class="book" href="https://book.squareup.com/appointments/b71d7koqjrsprm/location/LKCJ9D79RKB2H" target="_blank" rel="noopener">Book a session</a>
-  </main>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">Hair Sense</a>
+    <nav class="top" aria-label="Main">
+      <a href="#sessions">Sessions</a>
+      <a href="#how">How booking works</a>
+      <a href="#visit">Visit</a>
+      <a href="#faq">Questions</a>
+      <a class="btn" href="https://book.squareup.com/appointments/b71d7koqjrsprm/location/LKCJ9D79RKB2H" target="_blank" rel="noopener">Book</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <svg class="strands" viewBox="0 0 1200 700" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+      <g>
+        <path class="a" d="M760 -20 C 700 140, 860 240, 780 400 S 820 640, 760 760"/>
+        <path class="a" d="M820 -20 C 760 150, 920 250, 840 410 S 880 650, 820 760"/>
+        <path class="b" d="M880 -20 C 830 130, 990 260, 900 420 S 950 640, 890 760"/>
+      </g>
+      <g>
+        <path class="a" d="M940 -20 C 880 160, 1040 250, 960 420 S 1000 640, 950 760"/>
+        <path class="b" d="M1000 -20 C 950 140, 1100 270, 1020 430 S 1060 650, 1010 760"/>
+        <path class="a" d="M1060 -20 C 1000 150, 1160 260, 1080 420 S 1120 640, 1070 760"/>
+      </g>
+      <g>
+        <path class="b" d="M1120 -20 C 1070 140, 1220 270, 1140 430 S 1180 650, 1130 760"/>
+        <path class="a" d="M1180 -20 C 1120 160, 1280 250, 1200 420 S 1240 640, 1190 760"/>
+        <path class="a" d="M700 -20 C 650 150, 790 260, 720 420 S 760 650, 700 760"/>
+      </g>
+    </svg>
+    <div class="wrap">
+      <h1>Gentle hair play for a quieter mind.</h1>
+      <p class="lede">Slow brushing, light scalp scratching and soft hair play in a private studio out in the country. Nothing is cut or styled. You just get to relax.</p>
+      <div class="actions">
+        <a class="btn" href="https://book.squareup.com/appointments/b71d7koqjrsprm/location/LKCJ9D79RKB2H" target="_blank" rel="noopener">Request a session</a>
+        <a class="btn btn-quiet" href="#sessions">See sessions and prices</a>
+      </div>
+      <p class="where">In Vida, Oregon, along the McKenzie. Weekdays 9 to 5.</p>
+    </div>
+  </div>
+
+  <section class="about" aria-labelledby="about-h">
+    <div class="wrap grid">
+      <h2 id="about-h">Like the ASMR videos people fall asleep to, but in person.</h2>
+      <div class="body">
+        <p>Hair play is the calm, tingly feeling of someone gently brushing and running their fingers through your hair. It slows your breathing, quiets a busy head, and feels a lot like being looked after.</p>
+        <p>At Hair Sense, that is the whole appointment. You sit back, close your eyes if you like, and Jess takes it from there. You don’t have to talk, and it’s fine to drift off. Tell her at any point if you want more or less pressure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sessions" id="sessions" aria-labelledby="sessions-h">
+    <div class="wrap">
+      <h2 id="sessions-h">Sessions</h2>
+      <p class="lede">One client at a time, in a private studio. Pick the length that fits your day.</p>
+      <ul class="menu">
+        <li>
+          <h3>Express Play</h3>
+          <div class="dur"><span class="track"><span class="fill" style="width:25%"></span></span>15 min</div>
+          <p class="desc">A quick pick-me-up, and a great reset for children. Gentle hair brushing to calm the mind and body.</p>
+          <p class="price">$35</p>
+          <p class="book"><a href="https://book.squareup.com/appointments/b71d7koqjrsprm/location/LKCJ9D79RKB2H" target="_blank" rel="noopener" aria-label="Request Express Play">Request</a></p>
+        </li>
+        <li>
+          <h3>Standard Play</h3>
+          <div class="dur"><span class="track"><span class="fill" style="width:50%"></span></span>30 min</div>
+          <p class="desc">A deeper sensory experience with light scalp scratching, brushing and gentle hair play.</p>
+          <p class="price">$65</p>
+          <p class="book"><a href="https://book.squareup.com/appointments/b71d7koqjrsprm/location/LKCJ9D79RKB2H" target="_blank" rel="noopener" aria-label="Request Standard Play">Request</a></p>
+        </li>
+        <li>
+          <h3>Ultimate Play</h3>
+          <div class="dur"><span class="track"><span class="fill" style="width:100%"></span></span>60 min</div>
+          <p class="desc">A fully customized session with brushing, light scalp scratching and hair play, with an eye mask and weighted blanket for your comfort while you unwind.</p>
+          <p class="price">$99</p>
+          <p class="book"><a href="https://book.squareup.com/appointments/b71d7koqjrsprm/location/LKCJ9D79RKB2H" target="_blank" rel="noopener" aria-label="Request Ultimate Play">Request</a></p>
+        </li>
+      </ul>
+      <p class="note">Clients under 18 need a parent or guardian present for the whole session.</p>
+    </div>
+  </section>
+
+  <section class="steps" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <h2 id="how-h">How booking works</h2>
+      <ol>
+        <li>
+          <h3>Request a time</h3>
+          <p>Choose a session and a time online, at least a day ahead. You’ll get an email saying your request was received.</p>
+        </li>
+        <li>
+          <h3>Jess confirms it</h3>
+          <p>Jess reviews each request and confirms it, or suggests a different time if that slot doesn’t work.</p>
+        </li>
+        <li>
+          <h3>Get directions and reminders</h3>
+          <p>Your confirmation email includes the studio address. You’ll get a reminder email the day before and a text an hour before.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="visit" id="visit" aria-labelledby="visit-h">
+    <div class="wrap grid">
+      <div>
+        <h2 id="visit-h">A private studio in the country</h2>
+        <p class="lede">The studio sits in a serene, rural spot in Vida, up the McKenzie River from Springfield. To keep it private, the exact address is shared once your appointment is confirmed.</p>
+      </div>
+      <dl class="facts">
+        <dt>Where</dt><dd>Vida, Oregon 97488</dd>
+        <dt>Hours</dt><dd>Monday to Friday, 9am to 5pm. Evenings and weekends can be arranged; call or text to ask.</dd>
+        <dt>Phone</dt><dd><a href="tel:+15415250031">(541) 525-0031</a></dd>
+        <dt>Email</dt><dd><a href="mailto:jess@hair-sense.com">jess@hair-sense.com</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <h2 id="faq-h">Questions</h2>
+      <div class="list">
+        <details>
+          <summary>Is this a haircut or a massage?</summary>
+          <p>Neither. Your hair isn’t cut, washed or styled, and it isn’t a clinical massage. It’s gentle brushing, light scalp scratching and hair play, purely to help you relax.</p>
+        </details>
+        <details>
+          <summary>What do I do during a session?</summary>
+          <p>Nothing. Sit back, get comfortable and let go. You can stay quiet, chat a little, or doze off. Jess will check in on pressure, and you can ask for changes any time.</p>
+        </details>
+        <details>
+          <summary>Can children book?</summary>
+          <p>Yes. Express Play is a great 15-minute reset for kids. Anyone under 18 needs a parent or guardian present for the whole session.</p>
+        </details>
+        <details>
+          <summary>I’ve never felt ASMR tingles. Will I still enjoy it?</summary>
+          <p>Most people do. Even without tingles, slow, gentle touch is calming. If you’re not sure, Express Play is an easy way to try it.</p>
+        </details>
+        <details>
+          <summary>How should I come prepared?</summary>
+          <p>Come as you are, in something comfortable. Clean, dry hair is nice but not required.</p>
+        </details>
+        <details>
+          <summary>Why do I have to wait for a confirmation?</summary>
+          <p>Jess runs the studio herself and confirms each booking personally. Once she does, you’ll get the address and your reminders. If you need something sooner, call or text.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="close-h">
+    <div class="wrap">
+      <h2 id="close-h">Take a little time to unwind.</h2>
+      <p>Request a time online and Jess will confirm by email. Questions first? Call, text or email.</p>
+      <div class="actions">
+        <a class="btn" href="https://book.squareup.com/appointments/b71d7koqjrsprm/location/LKCJ9D79RKB2H" target="_blank" rel="noopener">Request a session</a>
+        <a class="plain" href="tel:+15415250031">(541) 525-0031</a>
+        <a class="plain" href="mailto:jess@hair-sense.com">jess@hair-sense.com</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Hair Sense, Vida, Oregon</span>
+    <span>By appointment only</span>
+  </div>
+</footer>
+
 </body>
 </html>
