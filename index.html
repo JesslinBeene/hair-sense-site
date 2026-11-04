@@ -10,45 +10,49 @@
   <meta property="og:description" content="Brushing, light scalp scratching and gentle hair play at a private country studio. Book online.">
   <meta property="og:url" content="https://hair-sense.com/">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#1f3a33">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f3a33'/%3E%3Cpath d='M16 46c6-14 2-26 10-30M26 48c4-12 2-22 10-32M36 48c3-10 4-20 12-30' fill='none' stroke='%23e3ebe4' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:image" content="https://hair-sense.com/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#faf1ea">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --mist: #e8eee9;
-      --mist-deep: #d6e0d8;
-      --fir: #1f3a33;
-      --fir-soft: #3d564e;
-      --river: #36626c;
-      --moss: #7f8f52;
-      --paper: #f6f8f5;
-      --bg: var(--mist);
-      --fg: var(--fir);
-      --muted: var(--fir-soft);
-      --accent: var(--river);
-      --accent-fg: #ffffff;
-      --line: rgba(31, 58, 51, .18);
-      --strand: rgba(54, 98, 108, .55);
-      --strand-2: rgba(127, 143, 82, .5);
-      --serif: "Young Serif", Georgia, serif;
+      --cream: #faf1ea;
+      --paper: #fffaf6;
+      --sand: #efe2d6;
+      --espresso: #3b2119;
+      --cocoa: #6b5148;
+      --sage: #7d8c68;
+      --sage-ink: #55643f;
+      --wood: #c08a55;
+      --bg: var(--cream);
+      --fg: var(--espresso);
+      --muted: var(--cocoa);
+      --accent: var(--espresso);
+      --accent-fg: var(--cream);
+      --link: var(--sage-ink);
+      --line: rgba(59, 33, 25, .15);
+      --serif: "Cormorant Garamond", Georgia, serif;
       --sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
       --wrap: 68rem;
       --gutter: clamp(1rem, 4vw, 2.5rem);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #14231f;
-        --paper: #1b2d28;
-        --mist-deep: #22382f;
-        --fg: #e3ebe4;
-        --muted: #a9bbb1;
-        --accent: #8fc0c6;
-        --accent-fg: #10201c;
-        --line: rgba(227, 235, 228, .16);
-        --strand: rgba(143, 192, 198, .45);
-        --strand-2: rgba(178, 192, 130, .4);
+        --bg: #231713;
+        --paper: #2c1d18;
+        --sand: #3a2822;
+        --fg: #f4e9e1;
+        --muted: #cbb7ac;
+        --accent: #f4e9e1;
+        --accent-fg: #2c1d18;
+        --link: #b9c79f;
+        --line: rgba(244, 233, 225, .14);
       }
     }
 
@@ -63,8 +67,8 @@
     a { color: inherit; }
     :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
     .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
-    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.15; margin: 0; letter-spacing: -.005em; }
-    h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); max-width: 22ch; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.08; margin: 0; }
+    h2 { font-size: clamp(2.1rem, 4.6vw, 3rem); max-width: 20ch; }
     p { margin: 0; }
     .lede { color: var(--muted); max-width: 58ch; }
 
@@ -74,7 +78,7 @@
       font: 600 1rem/1 var(--sans); letter-spacing: .01em;
       transition: filter .15s ease;
     }
-    .btn:hover { filter: brightness(1.1); }
+    .btn:hover { filter: brightness(1.15); }
     .btn-quiet {
       background: transparent; color: var(--fg); box-shadow: inset 0 0 0 1.5px var(--line);
     }
@@ -82,7 +86,9 @@
     /* Header */
     header.site { position: relative; z-index: 2; }
     header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1.25rem; padding-bottom: 1.25rem; }
-    .brand { font-family: var(--serif); font-size: 1.35rem; text-decoration: none; }
+    .brand { display: block; line-height: 0; }
+    .brand img { height: 72px; width: auto; }
+    @media (max-width: 480px) { .brand img { height: 56px; } }
     nav.top { display: flex; gap: 1.5rem; align-items: center; font-size: .95rem; }
     nav.top a:not(.btn) { text-decoration: none; color: var(--muted); }
     nav.top a:not(.btn):hover { color: var(--fg); }
@@ -90,25 +96,17 @@
     @media (max-width: 720px) { nav.top a:not(.btn) { display: none; } }
 
     /* Hero */
-    .hero { position: relative; overflow: hidden; padding: clamp(3rem, 9vw, 7rem) 0 clamp(4rem, 10vw, 8rem); }
-    .hero .wrap { position: relative; z-index: 1; }
-    .hero h1 { font-size: clamp(2.6rem, 7.5vw, 5.25rem); max-width: 12ch; }
+    .hero { padding: clamp(1.5rem, 5vw, 3.5rem) 0 clamp(3.5rem, 8vw, 6rem); }
+    .hero .wrap { display: grid; gap: 2.5rem 4rem; grid-template-columns: 1fr; align-items: center; }
+    @media (min-width: 860px) { .hero .wrap { grid-template-columns: 1.15fr .85fr; } }
+    .hero h1 { font-size: clamp(3rem, 7vw, 5rem); max-width: 11ch; }
     .hero .lede { margin-top: 1.5rem; font-size: 1.15rem; max-width: 44ch; }
     .hero .actions { margin-top: 2.25rem; display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
     .hero .where { margin-top: 2.5rem; font-size: .95rem; color: var(--muted); }
-    .strands { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 70%, transparent 100%);
-              mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 70%, transparent 100%); }
-    .strands path { fill: none; stroke-width: 1.6; stroke-linecap: round; }
-    .strands .a { stroke: var(--strand); }
-    .strands .b { stroke: var(--strand-2); }
-    @media (max-width: 720px) { .strands { opacity: .45; } }
-    @media (prefers-reduced-motion: no-preference) {
-      .strands g { animation: sway 9s ease-in-out infinite alternate; transform-origin: 50% 0; }
-      .strands g:nth-child(2) { animation-duration: 11s; animation-delay: -3s; }
-      .strands g:nth-child(3) { animation-duration: 13s; animation-delay: -6s; }
-      @keyframes sway { from { transform: translateX(-10px) skewX(-1.5deg); } to { transform: translateX(10px) skewX(1.5deg); } }
-    }
+    .hero figure { margin: 0; justify-self: center; width: min(100%, 26rem); }
+    .hero figure img { display: block; width: 100%; height: auto; aspect-ratio: 514 / 720; object-fit: cover; object-position: 50% 30%;
+      border-radius: 999px 999px 1.25rem 1.25rem; }
+    @media (max-width: 859px) { .hero figure { order: -1; width: min(100%, 20rem); } .hero figure img { aspect-ratio: 4 / 3.6; } }
 
     section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
     section + section { border-top: 1px solid var(--line); }
@@ -128,22 +126,22 @@
     @media (min-width: 860px) {
       .menu li { grid-template-columns: 14rem 1fr 6rem auto; grid-template-areas: "name desc price book" "bar desc price book"; align-items: start; }
     }
-    .menu h3 { grid-area: name; font-size: 1.5rem; }
+    .menu h3 { grid-area: name; font-size: 1.85rem; }
     .menu .desc { grid-area: desc; color: var(--muted); max-width: 52ch; }
-    .menu .price { grid-area: price; font-family: var(--serif); font-size: 1.5rem; text-align: right; }
+    .menu .price { grid-area: price; font-family: var(--serif); font-weight: 600; font-size: 1.85rem; text-align: right; }
     .menu .book { grid-area: book; align-self: center; }
-    .menu .book a { font-weight: 600; color: var(--accent); text-underline-offset: .25em; white-space: nowrap; }
+    .menu .book a { font-weight: 600; color: var(--link); text-underline-offset: .25em; white-space: nowrap; }
     .dur { grid-area: bar; display: flex; align-items: center; gap: .65rem; font-size: .9rem; color: var(--muted); }
-    .dur .track { position: relative; width: 9rem; height: 6px; border-radius: 3px; background: var(--mist-deep); overflow: hidden; }
-    .dur .fill { position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--moss); }
+    .dur .track { position: relative; width: 9rem; height: 6px; border-radius: 3px; background: var(--sand); overflow: hidden; }
+    .dur .fill { position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--wood); }
     .note { margin-top: 1.5rem; font-size: .95rem; color: var(--muted); max-width: 60ch; }
 
     /* Steps */
     .steps ol { list-style: none; counter-reset: s; margin: 2.75rem 0 0; padding: 0; display: grid; gap: 2rem; grid-template-columns: 1fr; }
     @media (min-width: 860px) { .steps ol { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
     .steps li { counter-increment: s; }
-    .steps li::before { content: counter(s); display: block; font-family: var(--serif); font-size: 2.75rem; line-height: 1; color: var(--moss); margin-bottom: .75rem; }
-    .steps h3 { font-size: 1.3rem; margin-bottom: .5rem; }
+    .steps li::before { content: counter(s); display: block; font-family: var(--serif); font-size: 3.25rem; line-height: 1; color: var(--sage); margin-bottom: .5rem; }
+    .steps h3 { font-size: 1.6rem; margin-bottom: .5rem; }
     .steps p { color: var(--muted); max-width: 36ch; }
 
     /* Visit */
@@ -153,25 +151,27 @@
     dl.facts { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: .9rem 1.5rem; }
     dl.facts dt { font-weight: 600; }
     dl.facts dd { margin: 0; color: var(--muted); }
+    dl.facts a { color: var(--link); text-underline-offset: .2em; }
 
     /* FAQ */
     .faq .list { margin-top: 2.25rem; max-width: 46rem; }
     details { border-top: 1px solid var(--line); }
     details:last-child { border-bottom: 1px solid var(--line); }
-    summary { cursor: pointer; list-style: none; padding: 1.15rem 2.5rem 1.15rem 0; position: relative; font-family: var(--serif); font-size: 1.2rem; }
+    summary { cursor: pointer; list-style: none; padding: 1.15rem 2.5rem 1.15rem 0; position: relative; font-family: var(--serif); font-weight: 600; font-size: 1.45rem; }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; position: absolute; right: .25rem; top: 50%; transform: translateY(-50%); font-family: var(--sans); font-size: 1.5rem; color: var(--accent); transition: transform .2s ease; }
+    summary::after { content: "+"; position: absolute; right: .25rem; top: 50%; transform: translateY(-50%); font-family: var(--sans); font-size: 1.5rem; color: var(--sage); transition: transform .2s ease; }
     details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
     details p { padding: 0 0 1.25rem; color: var(--muted); max-width: 60ch; }
 
     /* Closing */
-    .closing { background: var(--fir); color: #e3ebe4; text-align: left; }
+    .closing { background: var(--espresso); color: #f4e9e1; text-align: center; }
     @media (prefers-color-scheme: dark) { .closing { background: var(--paper); } }
-    .closing h2 { color: #f2f6f2; }
-    .closing p { margin-top: 1rem; color: #b9c9c0; max-width: 52ch; }
-    .closing .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; }
-    .closing .btn { background: #e3ebe4; color: var(--fir); }
-    .closing a.plain { color: #e3ebe4; text-underline-offset: .25em; }
+    .closing .logo { display: block; width: min(100%, 30rem); height: auto; margin: 0 auto; }
+    .closing h2 { color: #fbf3ec; margin: 2.5rem auto 0; font-size: clamp(1.9rem, 4vw, 2.6rem); max-width: 24ch; }
+    .closing p { margin: 1rem auto 0; color: #d8c6bb; max-width: 52ch; }
+    .closing .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; justify-content: center; }
+    .closing .btn { background: #f4e9e1; color: var(--espresso); }
+    .closing a.plain { color: #f4e9e1; text-underline-offset: .25em; }
 
     footer { padding: 2rem 0 2.5rem; font-size: .9rem; color: var(--muted); }
     footer .wrap { display: flex; flex-wrap: wrap; gap: .5rem 2rem; justify-content: space-between; }
@@ -182,7 +182,7 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#top">Hair Sense</a>
+    <a class="brand" href="#top" aria-label="Hair Sense home"><picture><source srcset="/assets/logo-light.png" media="(prefers-color-scheme: dark)"><img src="/assets/logo.png" alt="Hair Sense" width="640" height="222"></picture></a>
     <nav class="top" aria-label="Main">
       <a href="#sessions">Sessions</a>
       <a href="#how">How booking works</a>
@@ -196,24 +196,8 @@
 <main id="top">
 
   <div class="hero">
-    <svg class="strands" viewBox="0 0 1200 700" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
-      <g>
-        <path class="a" d="M760 -20 C 700 140, 860 240, 780 400 S 820 640, 760 760"/>
-        <path class="a" d="M820 -20 C 760 150, 920 250, 840 410 S 880 650, 820 760"/>
-        <path class="b" d="M880 -20 C 830 130, 990 260, 900 420 S 950 640, 890 760"/>
-      </g>
-      <g>
-        <path class="a" d="M940 -20 C 880 160, 1040 250, 960 420 S 1000 640, 950 760"/>
-        <path class="b" d="M1000 -20 C 950 140, 1100 270, 1020 430 S 1060 650, 1010 760"/>
-        <path class="a" d="M1060 -20 C 1000 150, 1160 260, 1080 420 S 1120 640, 1070 760"/>
-      </g>
-      <g>
-        <path class="b" d="M1120 -20 C 1070 140, 1220 270, 1140 430 S 1180 650, 1130 760"/>
-        <path class="a" d="M1180 -20 C 1120 160, 1280 250, 1200 420 S 1240 640, 1190 760"/>
-        <path class="a" d="M700 -20 C 650 150, 790 260, 720 420 S 760 650, 700 760"/>
-      </g>
-    </svg>
     <div class="wrap">
+      <div>
       <h1>Gentle hair play for a quieter mind.</h1>
       <p class="lede">Slow brushing, light scalp scratching and soft hair play in a private studio out in the country. Nothing is cut or styled. You just get to relax.</p>
       <div class="actions">
@@ -221,6 +205,10 @@
         <a class="btn btn-quiet" href="#sessions">See sessions and prices</a>
       </div>
       <p class="where">In Vida, Oregon, along the McKenzie. Weekdays 9 to 5.</p>
+      </div>
+      <figure>
+        <img src="/assets/hero.jpg" srcset="/assets/hero-400.jpg 400w, /assets/hero.jpg 514w" sizes="(min-width: 860px) 26rem, 20rem" width="514" height="948" alt="A wooden hair brush resting on a soft towel beside eucalyptus and a candle">
+      </figure>
     </div>
   </div>
 
@@ -334,6 +322,7 @@
 
   <section class="closing" aria-labelledby="close-h">
     <div class="wrap">
+      <img class="logo" src="/assets/logo-full-light.png" alt="Hair Sense, a sensory hair experience" width="1000" height="395">
       <h2 id="close-h">Take a little time to unwind.</h2>
       <p>Request a time online and Jess will confirm by email. Questions first? Call, text or email.</p>
       <div class="actions">
