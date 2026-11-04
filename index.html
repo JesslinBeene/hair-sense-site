@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hair Sense</title>
-  <meta name="description" content="Hair Sense — website coming soon.">
+  <meta name="description" content="Hair Sense — relaxing hair play sessions. Book online.">
   <style>
-    :root { --bg: #faf7f4; --fg: #2b2522; --muted: #7a6f69; }
+    :root { --bg: #faf7f4; --fg: #2b2522; --muted: #7a6f69; --accent: #8a5a44; --accent-fg: #fff; }
     @media (prefers-color-scheme: dark) {
-      :root { --bg: #1c1917; --fg: #f5f0eb; --muted: #a8a29e; }
+      :root { --bg: #1c1917; --fg: #f5f0eb; --muted: #a8a29e; --accent: #d6a589; --accent-fg: #1c1917; }
     }
     * { box-sizing: border-box; margin: 0; }
     body {
@@ -18,12 +18,19 @@
     }
     h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: normal; letter-spacing: .02em; }
     p { margin-top: .75rem; color: var(--muted); font-family: system-ui, sans-serif; }
+    .book {
+      display: inline-block; margin-top: 2rem; padding: .9rem 1.8rem; border-radius: 999px;
+      background: var(--accent); color: var(--accent-fg); text-decoration: none;
+      font-family: system-ui, sans-serif; font-size: 1rem; letter-spacing: .02em;
+    }
+    .book:hover, .book:focus-visible { filter: brightness(1.08); }
   </style>
 </head>
 <body>
   <main>
     <h1>Hair Sense</h1>
-    <p>Website coming soon.</p>
+    <p>Full website coming soon.</p>
+    <a class="book" href="https://book.squareup.com/appointments/b71d7koqjrsprm/location/LKCJ9D79RKB2H" target="_blank" rel="noopener">Book a session</a>
   </main>
 </body>
 </html>
