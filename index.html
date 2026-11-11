@@ -85,28 +85,28 @@
 
     /* Header */
     header.site { position: relative; z-index: 2; }
-    header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1.25rem; padding-bottom: 1.25rem; }
+    header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .9rem; padding-bottom: .9rem; }
     .brand { display: block; line-height: 0; }
-    .brand img { height: 72px; width: auto; }
-    @media (max-width: 480px) { .brand img { height: 56px; } }
+    .brand img { height: 46px; width: auto; }
+    @media (max-width: 480px) { .brand img { height: 38px; } }
     nav.top { display: flex; gap: 1.5rem; align-items: center; font-size: .95rem; }
     nav.top a:not(.btn) { text-decoration: none; color: var(--muted); }
     nav.top a:not(.btn):hover { color: var(--fg); }
     nav.top .btn { padding: .6rem 1.15rem; font-size: .9rem; }
     @media (max-width: 720px) { nav.top a:not(.btn) { display: none; } }
 
+    /* Banner */
+    .banner { margin: 0 auto; max-width: 1600px; background: #f3e6da; }
+    .banner img { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630; }
+
     /* Hero */
-    .hero { padding: clamp(1.5rem, 5vw, 3.5rem) 0 clamp(3.5rem, 8vw, 6rem); }
-    .hero .wrap { display: grid; gap: 2.5rem 4rem; grid-template-columns: 1fr; align-items: center; }
-    @media (min-width: 860px) { .hero .wrap { grid-template-columns: 1.15fr .85fr; } }
-    .hero h1 { font-size: clamp(3rem, 7vw, 5rem); max-width: 11ch; }
-    .hero .lede { margin-top: 1.5rem; font-size: 1.15rem; max-width: 44ch; }
-    .hero .actions { margin-top: 2.25rem; display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
-    .hero .where { margin-top: 2.5rem; font-size: .95rem; color: var(--muted); }
-    .hero figure { margin: 0; justify-self: center; width: min(100%, 26rem); }
-    .hero figure img { display: block; width: 100%; height: auto; aspect-ratio: 514 / 720; object-fit: cover; object-position: 50% 30%;
-      border-radius: 999px 999px 1.25rem 1.25rem; }
-    @media (max-width: 859px) { .hero figure { order: -1; width: min(100%, 20rem); } .hero figure img { aspect-ratio: 4 / 3.6; } }
+    .hero { padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(3.5rem, 8vw, 6rem); }
+    .hero .wrap { display: grid; gap: 1.5rem 4rem; grid-template-columns: 1fr; align-items: end; }
+    @media (min-width: 860px) { .hero .wrap { grid-template-columns: 1fr 1fr; } }
+    .hero h1 { font-size: clamp(2.6rem, 5.6vw, 4.25rem); max-width: 13ch; }
+    .hero .lede { font-size: 1.15rem; max-width: 44ch; }
+    .hero .actions { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+    .hero .where { margin-top: 1.5rem; font-size: .95rem; color: var(--muted); }
 
     section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
     section + section { border-top: 1px solid var(--line); }
@@ -182,7 +182,7 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Hair Sense home"><picture><source srcset="/assets/logo-light.png" media="(prefers-color-scheme: dark)"><img src="/assets/logo.png" alt="Hair Sense" width="640" height="222"></picture></a>
+    <a class="brand" href="#top" aria-label="Hair Sense home"><picture><source srcset="/assets/logo-mark-light.svg" media="(prefers-color-scheme: dark)"><img src="/assets/logo-mark.svg" alt="Hair Sense" width="428" height="272"></picture></a>
     <nav class="top" aria-label="Main">
       <a href="#sessions">Sessions</a>
       <a href="#how">How booking works</a>
@@ -195,20 +195,21 @@
 
 <main id="top">
 
+  <figure class="banner">
+    <img src="/assets/banner.jpg" srcset="/assets/banner-800.jpg 800w, /assets/banner.jpg 1200w" sizes="(min-width: 1600px) 1600px, 100vw" width="1200" height="630" alt="Hair Sense, a sensory hair experience. A wooden hair brush resting on a soft towel beside eucalyptus and a candle." fetchpriority="high">
+  </figure>
+
   <div class="hero">
     <div class="wrap">
-      <div>
       <h1>Gentle hair play for a quieter mind.</h1>
-      <p class="lede">Slow brushing, light scalp scratching and soft hair play in a private studio out in the country. Nothing is cut or styled. You just get to relax.</p>
-      <div class="actions">
-        <a class="btn" href="https://book.squareup.com/appointments/b71d7koqjrsprm/location/LKCJ9D79RKB2H" target="_blank" rel="noopener">Request a session</a>
-        <a class="btn btn-quiet" href="#sessions">See sessions and prices</a>
+      <div>
+        <p class="lede">Slow brushing, light scalp scratching and soft hair play in a private studio out in the country. Nothing is cut or styled. You just get to relax.</p>
+        <div class="actions">
+          <a class="btn" href="https://book.squareup.com/appointments/b71d7koqjrsprm/location/LKCJ9D79RKB2H" target="_blank" rel="noopener">Request a session</a>
+          <a class="btn btn-quiet" href="#sessions">See sessions and prices</a>
+        </div>
+        <p class="where">In Vida, Oregon, along the McKenzie. Weekdays 9 to 5.</p>
       </div>
-      <p class="where">In Vida, Oregon, along the McKenzie. Weekdays 9 to 5.</p>
-      </div>
-      <figure>
-        <img src="/assets/hero.jpg" srcset="/assets/hero-400.jpg 400w, /assets/hero.jpg 514w" sizes="(min-width: 860px) 26rem, 20rem" width="514" height="948" alt="A wooden hair brush resting on a soft towel beside eucalyptus and a candle">
-      </figure>
     </div>
   </div>
 
