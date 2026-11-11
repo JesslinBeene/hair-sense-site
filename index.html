@@ -83,20 +83,8 @@
       background: transparent; color: var(--fg); box-shadow: inset 0 0 0 1.5px var(--line);
     }
 
-    /* Header */
-    header.site { position: relative; z-index: 2; }
-    header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .9rem; padding-bottom: .9rem; }
-    .brand { display: block; line-height: 0; }
-    .brand img { height: 46px; width: auto; }
-    @media (max-width: 480px) { .brand img { height: 38px; } }
-    nav.top { display: flex; gap: 1.5rem; align-items: center; font-size: .95rem; }
-    nav.top a:not(.btn) { text-decoration: none; color: var(--muted); }
-    nav.top a:not(.btn):hover { color: var(--fg); }
-    nav.top .btn { padding: .6rem 1.15rem; font-size: .9rem; }
-    @media (max-width: 720px) { nav.top a:not(.btn) { display: none; } }
-
     /* Banner */
-    .banner { margin: .5rem auto 0; padding: 0 var(--gutter); max-width: calc(46rem + 2 * var(--gutter)); }
+    .banner { margin: clamp(1rem, 3vw, 2rem) auto 0; padding: 0 var(--gutter); max-width: calc(46rem + 2 * var(--gutter)); }
     .banner img { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630; border-radius: 1.25rem;
       box-shadow: 0 1px 2px rgba(59, 33, 25, .08), 0 12px 32px -12px rgba(59, 33, 25, .25); }
 
@@ -193,18 +181,6 @@
 </head>
 <body>
 
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="Hair Sense home"><picture><source srcset="/assets/logo-mark-light.svg" media="(prefers-color-scheme: dark)"><img src="/assets/logo-mark.svg" alt="Hair Sense" width="428" height="272"></picture></a>
-    <nav class="top" aria-label="Main">
-      <a href="#sessions">Sessions</a>
-      <a href="#how">How booking works</a>
-      <a href="#visit">Visit</a>
-      <a href="#faq">Questions</a>
-      <a class="btn" href="https://book.squareup.com/appointments/b71d7koqjrsprm/location/LKCJ9D79RKB2H" target="_blank" rel="noopener">Book</a>
-    </nav>
-  </div>
-</header>
 
 <main id="top">
 
